@@ -1,0 +1,42 @@
+<section>
+  <div class="back-ground d-flex justify-content-center align-items-center">
+    <div class="homeTitle fw-bold text-white">
+      /Current Play
+    </div>
+  </div>
+
+  <div class="container my-5">
+    <div class="row">
+      <div class="col-md-3 col-6 g-3" *ngFor="let currentPlay of allCurrentPlay | paginate: { id: 'CurrentPlay',
+      itemsPerPage: pageSize,
+      currentPage: p,
+      totalItems: total }">
+        <div class="playNow position-relative cursor-Pointar"  [routerLink]="['/movieDetials' , currentPlay.id]">
+          <div class="movieImg">
+            <img [src]="'https://image.tmdb.org/t/p/w500'+currentPlay.poster_path" [alt]="currentPlay.title" class="img-fluid">
+          </div>
+          <div class="movieRate text-white ">
+            <div class="movie-Rate fw-bold">
+              {{currentPlay.vote_average}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center mt-5">
+      <pagination-controls  id="CurrentPlay"
+      (pageChange)="pageChanged($event)"
+      (pageBoundsCorrection)="pageChanged($event)"
+      [maxSize]="9"
+      [directionLinks]="true"
+      [autoHide]="true"
+      [responsive]="true"
+      previousLabel="Previous"
+      nextLabel="Next"
+      screenReaderPaginationLabel="Pagination"
+      screenReaderPageLabel="page"
+      screenReaderCurrentLabel="You're on page">
+</pagination-controls>
+    </div>
+  </div>
+</section>

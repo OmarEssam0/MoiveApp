@@ -1,0 +1,24 @@
+<section id="ComingSoon" class="my-5">
+  <div class="container">
+    <div class="section-title d-flex justify-content-between align-items-center">
+      <div class="title">
+        <p class="fw-bold fs-4">Coming Soon</p>
+      </div>
+      <div class="more-detials">
+        <span class="fw-bold cursor-Pointar" routerLink="/comingSoon">
+          See More
+        </span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3 col-6 g-3" *ngFor="let currentPlay of firstFourComingSoon">
+        <div class="playNow position-relative cursor-Pointar cursor-Pointar" [routerLink]="['/movieDetials' , currentPlay.id]">
+          <div class="movieImg">
+            <img [src]="'https://image.tmdb.org/t/p/w500'+currentPlay.poster_path" [alt]="currentPlay.title" class="img-fluid">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+

@@ -1,0 +1,13 @@
+<header class="vh-100" [ngStyle]="{'background-image': 'linear-gradient(rgba(0, 0, 0, 0.65)0% 100%), url('+getBackgroundImage()+')'}">
+  <div class="slider">
+    <owl-carousel-o [options]="customOptions" (translated)="onSlideChange($event)">
+
+      <ng-container *ngFor="let slide of moivesData ">
+        <ng-template carouselSlide >
+          <img [src]="'https://image.tmdb.org/t/p/w500'+slide.poster_path" [alt]="slide.title" [title]="slide.title" class="img-fluid cursor-Pointar" [routerLink]="['/movieDetials' , slide.id]">
+        </ng-template>
+      </ng-container>
+
+    </owl-carousel-o>
+  </div>
+</header>
