@@ -4,3 +4,8 @@ section{
   background-size: cover;
   background-position: center;
 }
+@media (max-width : 600px) {
+    .poster{
+      margin-top: 38px;
+    }
+}

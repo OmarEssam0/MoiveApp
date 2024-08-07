@@ -1,12 +1,12 @@
 <section [ngStyle]="{'background-image': 'linear-gradient(rgba(0, 0, 0, 0.65)0% 100%), url('+getBackgroundImage()+')'}">
   <div class="container h-100">
     <div class="row align-items-center h-100">
-      <div class="col-md-4 col-6">
+      <div class="col-md-4">
         <div class="poster">
-          <img [src]="'https://image.tmdb.org/t/p/w500'+moiveSpec.poster_path" [alt]="moiveSpec.title" class="img-fluid">
+          <img [src]="'https://image.tmdb.org/t/p/w500'+moiveSpec.poster_path" [alt]="moiveSpec.title" class="img-fluid ">
         </div>
       </div>
-      <div class="col-md-8 col-6">
+      <div class="col-md-8 ">
         <div class="movieDitals">
           <h1 class="text-white fw-bold">{{moiveSpec.title}}</h1>
           <p class="text-white-50">
